@@ -1,0 +1,2 @@
+module IntrumentosHelper
+end
