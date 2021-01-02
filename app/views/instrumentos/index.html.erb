@@ -1,0 +1,8 @@
+<h1>Mis Instrumentos</h1>
+
+<% @instrumento.each do |instrumento| %>
+  <div>
+    <%= instrumento.nombre %>
+    <%= link_to "Detalles", instrumento %>
+  </div>
+<% end %>

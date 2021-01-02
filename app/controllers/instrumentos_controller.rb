@@ -1,5 +1,11 @@
 class InstrumentosController < ApplicationController
 
+  before_action :find_instrumento, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @instrumento = Instrumento.all
+  end
+
   def new
     @instrumento = Instrumento.new
   end
@@ -10,24 +16,24 @@ class InstrumentosController < ApplicationController
   end
 
   def show
-    @instrumento = Instrumento.find(params[:id])
   end
 
   def edit
-    @instrumento = Instrumento.find(params[:id])
   end
 
   def update
-    @instrumento = Instrumento.find(params[:id])
     @instrumento.update(nombre: params[:instrumento][:nombre])
     #render json: @instrumento
     redirect_to @instrumento
   end
 
   def destroy
-    @instrumento = Instrumento.find(params[:id])
     @instrumento.destroy
     redirect_to root_path
+  end
+
+  def find_instrumento
+    @instrumento = Instrumento.find(params[:id])
   end
 
 end

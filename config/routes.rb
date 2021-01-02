@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: "instrumentos#index"
 
+  get "instrumentos", to: "instrumentos#index"
   get "instrumentos/new", to: "instrumentos#new"
   post "instrumentos", to: "instrumentos#create"
   get "instrumentos/:id", to: "instrumentos#show"
