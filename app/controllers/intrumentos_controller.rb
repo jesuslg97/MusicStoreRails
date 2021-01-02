@@ -1,2 +1,0 @@
-class IntrumentosController < ApplicationController
-end
