@@ -1,1 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  background-image: url("/background-guitar.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  font-family: Source Serif Pro;
+  margin-bottom: 250px;
+}
