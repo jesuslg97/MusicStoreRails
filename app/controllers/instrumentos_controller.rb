@@ -11,7 +11,8 @@ class InstrumentosController < ApplicationController
   end
 
   def create
-    @instrumento = Instrumento.create(nombre: params[:instrumento][:nombre])
+    @instrumento.create(strong_params_instrumento)
+    #@instrumento = Instrumento.create(nombre: params[:instrumento][:nombre])
     render json: @instrumento
   end
 
@@ -22,7 +23,8 @@ class InstrumentosController < ApplicationController
   end
 
   def update
-    @instrumento.update(nombre: params[:instrumento][:nombre])
+    @instrumento.update(strong_params_instrumento)
+    #@instrumento.update(nombre: params[:instrumento][:nombre])
     #render json: @instrumento
     redirect_to @instrumento
   end
@@ -32,8 +34,14 @@ class InstrumentosController < ApplicationController
     redirect_to root_path
   end
 
-  def find_instrumento
-    @instrumento = Instrumento.find(params[:id])
-  end
+  private
+    def find_instrumento
+      @instrumento = Instrumento.find(params[:id])
+    end
+
+    def strong_params_instrumento
+      params.require(:instrumento).permit(:nombre)
+    end
+
 
 end
