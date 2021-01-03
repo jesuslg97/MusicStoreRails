@@ -1,11 +1,63 @@
-<h1>Mis Instrumentos</h1>
+<section class="offset-md-1 col-md-10 col-xs-12">
+  <div class="d-flex justify-content-center mt-5 content">
+    <div class="col-sm-12 py-4">
+      <div class="w-100 text-center">
+        <h1>Detalles instrumento</h1>
+        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto border-dark" style="width: 200px;">
+      </div>
 
-<h3><%= @instrumento.nombre %></h3>
-<h3><%= @instrumento.tipo %></h3>
-<h3><%= @instrumento.precio %></h3>
-<h3><%= @instrumento.detalles %></h3>
+      <div class="row">
+        <div class="col-md-3 mb-3 text-center">
+          <img alt="GUITARRA-1" class="img-fluid rounded" src=''>
+        </div>
 
-<div>
-  <%= link_to "Eliminar instrumento", @instrumento, method: :delete %>
-  <%= link_to "Editar instrumento", @instrumento, method: :patch %>
-</div>
+        <div class="col-md-5">
+          <h4> <%= @instrumento.nombre %> </h4>
+          <ul>
+            <li class="col1"> <%= @instrumento.detalles %> </li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 mt-5">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>' + desc1 + '</th>
+                <td>' + tabla1 + '</td>
+                </tr>
+              <tr>
+                <th>' + desc2 + '</th>
+                <td>' + tabla2 + '</td>
+                </tr>
+              <tr>
+                <th>' + desc3 + '</th>
+                <td>' + tabla3 + '</td>
+                </tr>
+              <tr>
+              <th>' + desc4 + '</th>
+              <td>' + tabla4 + '</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-4 text-center mt-3">
+          <div class="alert alert-dark p-2 my-auto">
+            <h5 class="my-auto"> <%= @instrumento.precio %> </h5>
+          </div>
+        </div>
+
+        <div class="col-md-8 text-center mt-3">
+          <!--<button onclick="" class="btn btn-dark">' + "Añadir al carrito" + '</button>-->
+          <%= link_to "Eliminar", @instrumento, method: :delete %>
+          <%= link_to "Editar", @instrumento, method: :patch %>
+        </div>
+
+        <div class="col-md-12 d-xl-none">
+          <hr>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
