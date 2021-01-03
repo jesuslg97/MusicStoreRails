@@ -1,25 +1,79 @@
 <%= form_with(model: @instrumento, local: true) do |form| %>
-  <div>
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre %>
-  </div>
+  <!--<form class="was-validated">-->
+  <div class="row">
+    <!-- Bloque izquierda -->
+    <div class="col-md-6 col-xs-12">
 
-  <div>
-    <%= form.label :tipo %>
-    <%= form.text_field :tipo %>
-  </div>
+      <!-- Box name -->
+      <div class="form-group">
+        <%= form.label :nombre %>
+        <%= form.text_field :nombre, class:"form-control" %>
+        <!--<label for="name">Nombre:</label>
+        <input type="text" class="form-control" id="name" placeholder="...." minlength="3" maxlength="10" required>
+        <span id="ename" class="error"></span>-->
 
-  <div>
-    <%= form.label :precio %>
-    <%= form.text_field :precio %>
-  </div>
+        <div class="valid-feedback">
+          <span class="validate">Nombre válido.</span>
+        </div>
+      </div>
+      <!-- Box name -->
 
-  <div>
-    <%= form.label :detalles %>
-    <%= form.text_field :detalles %>
-  </div>
+      <!-- Box pais -->
+      <div class="form-group">
+        <%= form.label :tipo %>
+        <%= form.text_field :tipo, class:"form-control" %>
+        <!--<label for="country">País:</label>
+        <input type="text" class="form-control" id="country" placeholder="...." minlength="5" maxlength="15" required>
+        <span id="ecountry" class="error"></span>-->
 
-  <div>
+        <div class="valid-feedback">
+          <span class="validate">País válido.</span>
+        </div>
+      </div>
+      <!-- Box pais -->
+
+    </div>
+    <!-- Bloque izquierda -->
+
+    <!-- Bloque derecha -->
+    <div class="col-md-6 col-xs-12">
+
+      <!-- Box direccion -->
+      <div class="form-group">
+        <%= form.label :precio %>
+        <%= form.text_field :precio, class:"form-control" %>
+        <!--<label for="direction">Dirección:</label>
+        <input type="text" class="form-control" id="direction" placeholder="...." minlength="5" maxlength="15" required>
+        <span id="edirection" class="error"></span>-->
+
+        <div class="valid-feedback">
+          <span class="validate">Dirección válida.</span>
+        </div>
+      </div>
+      <!-- Box direccion -->
+
+      <!-- Box email -->
+      <div class="form-group">
+        <%= form.label :detalles %>
+        <%= form.text_field :detalles, class:"form-control" %>
+        <!--<label for="email">Email:</label>
+        <input type="email" class="form-control" id="email"
+               aria-describedby="emailHelp" placeholder="example@example.com" required>
+        <span id="eemail" class="error"></span>-->
+
+        <div class="valid-feedback">
+          <span class="validate">Email válido.</span>
+        </div>
+      </div>
+      <!-- Box email -->
+
+    </div>
+    <!-- Bloque izquierda -->
+
+  </div>
+  <div class="d-flex justify-content-center mb-2 mt-4">
     <%= form.submit %>
+    <!--<button type="submit" onclick="return validate_register()" class="btn btn-primary">Registrarse</button>-->
   </div>
 <% end %>
+<!--</form>-->
