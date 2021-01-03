@@ -1,8 +1,50 @@
-<h1>Mis Instrumentos</h1>
+<section class="offset-md-1 col-md-10 col-xs-12">
+  <div class="my-3 content py-3 ">
 
-<% @instrumento.each do |instrumento| %>
-  <div>
-    <%= instrumento.nombre %>
-    <%= link_to "Detalles", instrumento %>
+    <div class="w-100 text-center">
+      <h1>Mis instrumentos</h1>
+      <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto border-dark" style="width: 200px;">
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Tipo</th>
+          <th class="text-center">Precio</th>
+          <th class="text-center">Detalles</th>
+          <th class="text-center" colspan="3">Acciones</th>
+        </tr>
+        </thead>
+
+        <% @instrumento.each do |instrumento| %>
+          <tbody>
+            <tr>
+              <td class="text-center align-middle"> <%= instrumento.nombre %> </td>
+
+              <td class="text-center align-middle"> <%= instrumento.tipo %> </td>
+
+              <td class="text-center align-middle"> <%= instrumento.precio %> </td>
+
+              <td class="text-center align-middle"> <%= instrumento.detalles %> </td>
+
+              <td class="text-center align-middle"> <%= link_to "Detalles", instrumento %> </td>
+              <td class="text-center align-middle"> <%= link_to "Editar", instrumento %> </td>
+              <!-- Icono Basura Eliminar -->
+              <td class="text-center align-middle">
+                <button class="btn btn-dark">
+                  <i class="fas fa-trash">
+                    <%= link_to "Eliminar", instrumento, method: :delete %>
+                  </i>
+                </button>
+              </td>
+              <!-- /Icono Basura Eliminar -->
+
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
   </div>
-<% end %>
+</section>

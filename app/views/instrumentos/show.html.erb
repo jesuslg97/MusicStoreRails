@@ -1,7 +1,11 @@
 <h1>Mis Instrumentos</h1>
 
-<h1><%= @instrumento.nombre %></h1>
+<h3><%= @instrumento.nombre %></h3>
+<h3><%= @instrumento.tipo %></h3>
+<h3><%= @instrumento.precio %></h3>
+<h3><%= @instrumento.detalles %></h3>
 
 <div>
   <%= link_to "Eliminar instrumento", @instrumento, method: :delete %>
+  <%= link_to "Editar instrumento", @instrumento, method: :patch %>
 </div>
