@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2020_12_28_155038) do
     t.string "nombre"
     t.string "descripcion"
     t.string "img"
-    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at", precision: 6
