@@ -23,3 +23,14 @@ body {
   opacity: 0.89;
   border-radius: 10px;
 }
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.custom-form label {
+  font-family: Source Serif Pro, serif;
+  color: black;
+  font-size: large;
+}

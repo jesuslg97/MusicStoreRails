@@ -11,9 +11,13 @@ class InstrumentosController < ApplicationController
   end
 
   def create
-    @instrumento.create(strong_params_instrumento)
-    #@instrumento = Instrumento.create(nombre: params[:instrumento][:nombre])
-    render json: @instrumento
+    @instrumento = Instrumento.create(strong_params_instrumento)
+    if @instrumento.save
+      redirect_to @instrumento
+    else
+      render 'new'
+    end
+    #render json: @instrumento
   end
 
   def show
@@ -23,10 +27,12 @@ class InstrumentosController < ApplicationController
   end
 
   def update
-    @instrumento.update(strong_params_instrumento)
-    #@instrumento.update(nombre: params[:instrumento][:nombre])
+    if @instrumento.update(strong_params_instrumento)
+      redirect_to @instrumento
+    else
+      render 'edit'
+    end
     #render json: @instrumento
-    redirect_to @instrumento
   end
 
   def destroy
@@ -40,7 +46,7 @@ class InstrumentosController < ApplicationController
     end
 
     def strong_params_instrumento
-      params.require(:instrumento).permit(:nombre, :precio, :detalles, :tipo)
+      params.require(:instrumento).permit(:nombre, :tipo, :detalles, :precio)
     end
 
 end
