@@ -22,26 +22,29 @@
             </ul>
           </div>
         <% end %>
-
-        <div class="valid-feedback">
-          <span class="validate">Nombre válido.</span>
-        </div>
       </div>
       <!-- Box name -->
 
-      <!-- Box pais -->
+      <!-- Box tipo -->
       <div class="form-group">
         <%= form.label :tipo %>
         <%= form.text_field :tipo, class:"form-control" %>
-        <!--<label for="country">País:</label>
-        <input type="text" class="form-control" id="country" placeholder="...." minlength="5" maxlength="15" required>
-        <span id="ecountry" class="error"></span>-->
 
-        <div class="valid-feedback">
-          <span class="validate">País válido.</span>
-        </div>
+        <% if @instrumento.errors.any? %>
+          <div id="error_explanation" class="error">
+            <span>
+              Se han encontrado
+              <%= pluralize(@instrumento.errors.count, "error") %>:
+            </span>
+            <ul>
+              <% @instrumento.errors.full_messages.each do |msg| %>
+                <li> <%= msg %> </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
       </div>
-      <!-- Box pais -->
+      <!-- Box tipo -->
 
     </div>
     <!-- Bloque izquierda -->
@@ -49,34 +52,47 @@
     <!-- Bloque derecha -->
     <div class="col-md-6 col-xs-12">
 
-      <!-- Box direccion -->
+      <!-- Box precio -->
       <div class="form-group">
         <%= form.label :precio %>
         <%= form.text_field :precio, class:"form-control" %>
-        <!--<label for="direction">Dirección:</label>
-        <input type="text" class="form-control" id="direction" placeholder="...." minlength="5" maxlength="15" required>
-        <span id="edirection" class="error"></span>-->
 
-        <div class="valid-feedback">
-          <span class="validate">Dirección válida.</span>
-        </div>
+        <% if @instrumento.errors.any? %>
+          <div id="error_explanation" class="error">
+            <span>
+              Se han encontrado
+              <%= pluralize(@instrumento.errors.count, "error") %>:
+            </span>
+            <ul>
+              <% @instrumento.errors.full_messages.each do |msg| %>
+                <li> <%= msg %> </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
       </div>
-      <!-- Box direccion -->
+      <!-- Box precio -->
 
-      <!-- Box email -->
+      <!-- Box detalles -->
       <div class="form-group">
         <%= form.label :detalles %>
         <%= form.text_field :detalles, class:"form-control" %>
-        <!--<label for="email">Email:</label>
-        <input type="email" class="form-control" id="email"
-               aria-describedby="emailHelp" placeholder="example@example.com" required>
-        <span id="eemail" class="error"></span>-->
 
-        <div class="valid-feedback">
-          <span class="validate">Email válido.</span>
-        </div>
+        <% if @instrumento.errors.any? %>
+          <div id="error_explanation" class="error">
+            <span>
+              Se han encontrado
+              <%= pluralize(@instrumento.errors.count, "error") %>:
+            </span>
+            <ul>
+              <% @instrumento.errors.full_messages.each do |msg| %>
+                <li> <%= msg %> </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
       </div>
-      <!-- Box email -->
+      <!-- Box detalles -->
 
     </div>
     <!-- Bloque izquierda -->
