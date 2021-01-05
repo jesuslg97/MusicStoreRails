@@ -12,6 +12,7 @@
         <tr>
           <th class="text-center">Nombre</th>
           <th class="text-center">Tipo</th>
+          <th class="text-center">Imagen</th>
           <th class="text-center">Precio</th>
           <th class="text-center">Detalles</th>
           <th class="text-center" colspan="3">Acciones</th>
@@ -24,6 +25,10 @@
               <td class="text-center align-middle"> <%= instrumento.nombre %> </td>
 
               <td class="text-center align-middle"> <%= instrumento.tipo %> </td>
+
+              <td class="text-center align-middle">
+                <%= image_tag(instrumento.image, class: "rounded", style: "width: 200px") %>
+              </td>
 
               <td class="text-center align-middle"> <%= instrumento.precio %> </td>
 
