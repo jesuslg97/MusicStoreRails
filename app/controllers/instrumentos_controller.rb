@@ -17,14 +17,13 @@ class InstrumentosController < ApplicationController
     else
       render 'new'
     end
-    #render json: @instrumento
   end
 
   def show
-    @instrumento = Instrumento.all.with_attached_image
-    render json: @instrumento.map { |instrumento|
-      instrumento.as_json.merge({ image: url_for(instrumento.image) })
-    }
+    #@instrumento = Instrumento.all.with_attached_image
+    #render json: @instrumento.map { |instrumento|
+    #  instrumento.as_json.merge({ image: url_for(instrumento.image) })
+    #}
   end
 
   def edit
@@ -36,7 +35,6 @@ class InstrumentosController < ApplicationController
     else
       render 'edit'
     end
-    #render json: @instrumento
   end
 
   def destroy
@@ -50,7 +48,8 @@ class InstrumentosController < ApplicationController
     end
 
     def strong_params_instrumento
-      params.require(:instrumento).permit(:nombre, :tipo, :detalles, :precio, :image, :idCategoria)
+      params.require(:instrumento).permit(:nombre, :tipo, :detalles, :precio,
+                                          :image, :idCategoria, :color, :material)
     end
 
 end

@@ -5,5 +5,7 @@ class Instrumento < ApplicationRecord
   validates :precio, presence: true, length: {minimum: 1, maximum: 5}
   validates :detalles, presence: true, length: {minimum: 1}
   validates :idCategoria, presence: true
+  validates :color, presence: true
+  validates :material, presence: true, length: {minimum: 1}
   validates :image, presence: true
 end

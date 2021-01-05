@@ -8,10 +8,8 @@
 
       <div class="row">
         <div class="col-md-3 mb-3 text-center">
-
-          <!--<img alt="GUITARRA-1" class="img-fluid rounded" src=''>-->
+          <%= image_tag(@instrumento.image, class: "rounded", style: "width: 200px") %>
         </div>
-        <%#= @instrumento.image %>
 
         <div class="col-md-5">
           <h4> <%= @instrumento.nombre %> </h4>
@@ -24,20 +22,12 @@
           <table class="table">
             <tbody>
               <tr>
-                <th>' + desc1 + '</th>
-                <td>' + tabla1 + '</td>
-                </tr>
+                <th>Color</th>
+                <td> <%= @instrumento.color %> </td>
+              </tr>
               <tr>
-                <th>' + desc2 + '</th>
-                <td>' + tabla2 + '</td>
-                </tr>
-              <tr>
-                <th>' + desc3 + '</th>
-                <td>' + tabla3 + '</td>
-                </tr>
-              <tr>
-              <th>' + desc4 + '</th>
-              <td>' + tabla4 + '</td>
+                <th>Material</th>
+                <td> <%= @instrumento.material %> </td>
               </tr>
             </tbody>
           </table>
@@ -50,15 +40,8 @@
         </div>
 
         <div class="col-md-8 text-center mt-3">
-          <!--<button onclick="" class="btn btn-dark">' + "Añadir al carrito" + '</button>-->
           <%= link_to "Volver", instrumentos_path %>
           <%= link_to "Editar", edit_instrumento_path(@instrumento) %>
-          <%= link_to "Eliminar", @instrumento, method: :delete,
-                      data: {confirm: '¿Está seguro de querer eliminar?'} %>
-        </div>
-
-        <div class="col-md-12 d-xl-none">
-          <hr>
         </div>
 
       </div>
