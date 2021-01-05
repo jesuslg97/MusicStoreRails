@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "instrumentos/new", to: "instrumentos#new", as: :new_instrumento
   post "instrumentos", to: "instrumentos#create"
   get "instrumentos/:id", to: "instrumentos#show"
-  get "instrumentos/:id/edit", to: "instrumentos#edit"
+  get "instrumentos/:id/edit", to: "instrumentos#edit", as: :edit_instrumento
   patch "instrumentos/:id", to: "instrumentos#update", as: :instrumento
   delete "instrumentos/:id", to: "instrumentos#destroy"
 

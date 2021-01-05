@@ -49,8 +49,10 @@
 
         <div class="col-md-8 text-center mt-3">
           <!--<button onclick="" class="btn btn-dark">' + "Añadir al carrito" + '</button>-->
-          <%= link_to "Eliminar", @instrumento, method: :delete %>
-          <%= link_to "Editar", @instrumento, method: :patch %>
+          <%= link_to "Volver", instrumentos_path %>
+          <%= link_to "Editar", edit_instrumento_path(@instrumento) %>
+          <%= link_to "Eliminar", @instrumento, method: :delete,
+                      data: {confirm: '¿Está seguro de querer eliminar?'} %>
         </div>
 
         <div class="col-md-12 d-xl-none">

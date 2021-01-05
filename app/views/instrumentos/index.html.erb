@@ -29,13 +29,24 @@
 
               <td class="text-center align-middle"> <%= instrumento.detalles %> </td>
 
-              <td class="text-center align-middle"> <%= link_to "Detalles", instrumento %> </td>
-              <td class="text-center align-middle"> <%= link_to "Editar", instrumento %> </td>
+              <!-- Icono Lupa Detalles -->
+              <td class="text-center align-middle">
+                <%= link_to "Detalles", instrumento %>
+              </td>
+              <!-- /Icono Lupa Detalles -->
+
+              <!-- Icono Boligrafo Editar -->
+              <td class="text-center align-middle">
+                <%= link_to "Editar", edit_instrumento_path(instrumento.id) %>
+              </td>
+              <!-- /Icono Boligrafo Editar -->
+
               <!-- Icono Basura Eliminar -->
               <td class="text-center align-middle">
                 <button class="btn btn-dark">
                   <i class="fas fa-trash">
-                    <%= link_to "Eliminar", instrumento, method: :delete %>
+                    <%= link_to "Eliminar", instrumento, method: :delete,
+                                data: {confirm: '¿Está seguro de querer eliminar?'} %>
                   </i>
                 </button>
               </td>
