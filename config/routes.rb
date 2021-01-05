@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   #resources :instrumentos
 
+  get "showjson", to: "show_json#show"
+
   get "instrumentos", to: "instrumentos#index"
   get "instrumentos/new", to: "instrumentos#new", as: :new_instrumento
   post "instrumentos", to: "instrumentos#create"
