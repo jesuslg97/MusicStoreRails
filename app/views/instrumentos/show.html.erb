@@ -31,17 +31,31 @@
               </tr>
             </tbody>
           </table>
+
+          <div class="col-md-8 text-center mt-3 pt-3">
+            <!-- Icono Volver -->
+            <td class="text-center align-middle">
+              <button class="btn btn-dark ml-4">
+                <%= link_to "Volver", instrumentos_path, style: "color:#ffffff" %>
+              </button>
+            </td>
+            <!-- /Icono Volver -->
+
+            <!-- Icono Editar -->
+            <td class="text-center align-middle">
+              <button class="btn btn-success">
+                <%= link_to "Editar", edit_instrumento_path(@instrumento.id), style: "color:#ffffff" %>
+              </button>
+            </td>
+            <!-- /Icono Editar -->
+          </div>
+
         </div>
 
         <div class="col-md-4 text-center mt-3">
           <div class="alert alert-dark p-2 my-auto">
             <h5 class="my-auto"> <%= @instrumento.precio %> </h5>
           </div>
-        </div>
-
-        <div class="col-md-8 text-center mt-3">
-          <%= link_to "Volver", instrumentos_path %>
-          <%= link_to "Editar", edit_instrumento_path(@instrumento) %>
         </div>
 
       </div>
