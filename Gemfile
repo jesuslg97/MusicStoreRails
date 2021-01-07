@@ -34,6 +34,9 @@ gem 'popper_js', '~> 1.16'
 # Jquery-rails
 gem 'jquery-rails', '~> 4.3.5'
 
+#CORS
+gem 'rack-cors'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
