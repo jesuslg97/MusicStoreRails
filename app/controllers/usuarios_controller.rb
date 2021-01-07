@@ -1,18 +1,27 @@
 class UsuariosController < ApplicationController
 
-  @root_url = ""
-
-  layout 'aplication'
-
+  @root_url = "/usuarios/index"
+  layout 'application'
   add_flash_types :notice
 
   def index
-    @usuarios = Postre.all()
+    @postres = Usuario.all()
   end
 
-  def leer
-    @usuarios = params[:url]
-    @usuarios = Postre.where(url: @usuarios)
+  def show
+
+  end
+
+  def new
+    @postres = Usuario.new
+  end
+
+  def update
+
+  end
+
+  def elimiar
+
   end
 
 end
