@@ -1,0 +1,2 @@
+module CategoriasApiHelper
+end
