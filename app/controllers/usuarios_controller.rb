@@ -17,7 +17,7 @@ class UsuariosController < ApplicationController
   end
 
   def create
-    @usuario = Usuario.create(nombre: params[:usuario][:nombre])
+    @usuario = Usuario.create(strong_params_instrumento)
     render json: @usuario
   end
 
