@@ -1,2 +1,27 @@
-<h1>Categorias#leer</h1>
-<p>Find me in app/views/categorias/leer.html.erb</p>
+<div class="container">
+  <h1>Detalles de categoría</h1>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><%= @categoria.id %></th>
+        <td><%= @categoria.nombre %></td>
+        <td><%= @categoria.descripcion %></td>
+        <td><%= @categoria.img %></td>
+        <td class="text-center">
+          <a class="btn btn-primary btn-sm" href="/categorias/actualizar/<%= @categoria.id %>">Editar</a>
+          <button type="button" class="btn btn-sm btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
