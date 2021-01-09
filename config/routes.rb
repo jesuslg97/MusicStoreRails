@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post "usuarios", to: "usuarios#create"
   get 'usuarios/:id', to: "usuarios#show"
   get 'usuarios/:id/edit', to: "usuarios#edit"
-  patch "usuarios/:id", to: "usuarios#update"
+  patch "usuarios/:id", to: "usuarios#update", as: :usuario
   delete "usuarios/:id", to: "usuarios#delete"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -1,6 +1,6 @@
 <h1 class=" d-flex justify-content-center mb-4" >Crear usuario</h1>
 <section class="d-flex justify-content-center">
-  <%= form_with(model: @usuariorai, local: true) do |form| %>
+  <%= form_with(model: @usuario, local: true) do |form| %>
     <div>
       <%= form.label :nombre %>
       <%= form.text_field :nombre %>
@@ -25,9 +25,8 @@
     <%= form.label :codigo_postal %>
     <%= form.text_field :codigo_postal %>
     </div>
-    </section>
     <div class="d-flex justify-content-center mt-3">
       <%= form.submit %>
     </div>
-
-<% end %>
+  <% end %>
+</section>

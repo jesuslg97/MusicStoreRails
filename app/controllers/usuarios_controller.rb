@@ -22,18 +22,22 @@ class UsuariosController < ApplicationController
   end
 
   def edit
+    @usuario = Usuario.find(params[:id])
   end
 
   def update
-    if @instrumento.update(strong_params_instrumento)
-      redirect_to @instrumento
+    @usuario = Usuario.find(params[:id])
+    if @usuario.update(params_usuarios)
+      redirect_to @usuario
     else
       render 'edit'
     end
   end
 
   def delete
-
+    @usuario = Usuario.find(params[:id])
+    @usuario.destroy
+    redirect_to root_path
   end
 
   private
