@@ -1,2 +1,36 @@
-<h1>Usuarios#index</h1>
-<p>Find me in app/views/usuarios/index.html.erb</p>
+<h1 class="d-flex justify-content-center mb-4" >Tabla usuarios</h1>
+
+<section>
+  <div class="d-flex justify-content-center mb-4">
+    <%= link_to "Añadir usuario", "new"%>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="text-center">Nombre</th>
+      <th class="text-center">Apellidos</th>
+      <th class="text-center">Pais</th>
+      <th class="text-center">Correo</th>
+      <th class="text-center" colspan="3">Acciones</th>
+    </tr>
+    </thead>
+
+    <% @usuario.each do |usuario| %>
+      <tbody>
+      <tr>
+        <td class="text-center align-middle"> <%= usuario.nombre %> </td>
+        <td class="text-center align-middle"> <%= usuario.apellidos %> </td>
+        <td class="text-center align-middle"> <%= usuario.pais %> </td>
+        <td class="text-center align-middle"> <%= usuario.email %> </td>
+        <td class="text-center align-middle"> <%= link_to "Detalles", usuario %> </td>
+        <td class="text-center align-middle"> <%= link_to "Editar", edit_usuario_path(usuario.id) %> </td>
+        <td class="text-center align-middle"> <%= link_to "Eliminar", usuario, method: :delete %> </td>
+      </tr>
+
+
+      </tbody>
+    <% end %>
+  </table>>
+
+</section>

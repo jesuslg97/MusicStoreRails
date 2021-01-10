@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
 
-  #@root_url = "/usuarios/index"
+  @root_url = "/usuarios/index"
   layout 'application'
   add_flash_types :notice
 
@@ -14,7 +14,8 @@ class UsuariosController < ApplicationController
 
   def create
     @usuario = Usuario.create(params_usuarios)
-    render json: @usuario
+    redirect_to root_path
+    #render json: @usuario
   end
 
   def show
@@ -28,7 +29,7 @@ class UsuariosController < ApplicationController
   def update
     @usuario = Usuario.find(params[:id])
     if @usuario.update(params_usuarios)
-      redirect_to @usuario
+      redirect_to root_path
     else
       render 'edit'
     end
