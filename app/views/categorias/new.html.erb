@@ -1,10 +1,25 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <h4 class="mt-4 mb-4 display-4">Nueva Categoría</h4>
+  <h1>Crear categoría</h1>
+
+  <div class="d-flex my-3">
+    <%= link_to 'Ver Categorías', categorias_path, class: "btn btn-secondary" %>
   </div>
+
   <%= form_with(model: @categoria, url: categorias_path, html: { method: :post}, local: true) do |form| %>
-    <!-- Protección CSRF-->
-    <%#= token_tag nil %>
+
+    <% if @categoria.errors.any? %>
+      <div class="alert alert-danger">
+        <span>
+          Se han encontrado
+          <%= pluralize(@categoria.errors.count, "error") %>:
+        </span>
+        <ul>
+          <% @categoria.errors.full_messages.each do |msg| %>
+            <li> <%= msg %> </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="form-group">
       <%= form.label :nombre %>
@@ -23,6 +38,5 @@
 
     <%= form.submit "Guardar", class: 'btn btn-primary' %>
 
-    <%= link_to 'Cancelar', :back, class: "btn btn-warning" %>
   <% end %>
 </div>

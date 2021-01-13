@@ -1,5 +1,10 @@
 <div class="container">
   <h1>Detalles de categoría</h1>
+
+  <div class="d-flex my-3">
+    <%= link_to 'Ver Categorías', categorias_path, class: "btn btn-secondary" %>
+  </div>
+
   <table class="table table-hover">
     <thead>
     <tr>
@@ -23,7 +28,5 @@
       </tr>
     </tbody>
   </table>
-
-  <%= link_to 'Cancelar', :back, class: "btn btn-warning" %>
 
 </div>

@@ -37,7 +37,7 @@ class CategoriasController < ApplicationController
   def destroy
     @categoria = Categorium.find(params[:id])
     @categoria.destroy
-    redirect_to "categorias/index"
+    redirect_to categorias_path
   end
 
   private

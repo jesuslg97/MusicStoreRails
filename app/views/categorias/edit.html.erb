@@ -2,9 +2,25 @@
 
   <h1>Editar categoría</h1>
 
+  <div class="d-flex my-3">
+    <%= link_to 'Ver Categorías', categorias_path, class: "btn btn-secondary" %>
+  </div>
+
   <%= form_with(model: @categoria, local: true) do |form| %>
-    <!-- Protección CSRF-->
-    <%#= token_tag nil %>
+
+    <% if @categoria.errors.any? %>
+      <div class="alert alert-danger">
+        <span>
+          Se han encontrado
+          <%= pluralize(@categoria.errors.count, "error") %>:
+        </span>
+        <ul>
+          <% @categoria.errors.full_messages.each do |msg| %>
+            <li> <%= msg %> </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="form-group">
       <%= form.label :id %>
@@ -28,7 +44,6 @@
 
     <%= form.submit "Guardar", class: 'btn btn-primary' %>
 
-    <%= link_to 'Cancelar', :back, class: "btn btn-warning" %>
   <% end %>
 
 </div>
