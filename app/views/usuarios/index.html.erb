@@ -1,36 +1,53 @@
-<h1 class="d-flex justify-content-center mb-4" >Tabla usuarios</h1>
+<section class="offset-md-1 col-md-10 col-xs-12">
+  <div class="my-3 content py-3 ">
+    <div class="d-flex justify-content-center mb-4">
+      <%= link_to "Añadir usuario", new_usuario_path %>
+    </div>
 
-<section>
-  <div class="d-flex justify-content-center mb-4">
-    <%= link_to "Añadir usuario", "new"%>
+    <div class="table-responsive">
+      <div class="w-100 text-center">
+        <h1>Usuarios</h1>
+        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto border-dark" style="width: 200px;">
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Apellidos</th>
+          <th class="text-center">Pais</th>
+          <th class="text-center">Correo</th>
+          <th class="text-center" colspan="3">Acciones</th>
+        </tr>
+        </thead>
+
+        <% @usuario.each do |usuario| %>
+          <tbody>
+          <tr>
+            <td class="text-center align-middle"> <%= usuario.nombre %> </td>
+            <td class="text-center align-middle"> <%= usuario.apellidos %> </td>
+            <td class="text-center align-middle"> <%= usuario.pais %> </td>
+            <td class="text-center align-middle"> <%= usuario.email %> </td>
+            <td class="text-center align-middle">
+              <button class="btn">
+                <%= link_to "Detalles", usuario %>
+              </button>
+            </td>
+            <td class="text-center align-middle">
+              <button class="btn">
+                <%= link_to "Editar", edit_usuario_path(usuario.id) %>
+              </button>
+            </td>
+            <td class="text-center align-middle">
+              <button class="btn btn-dark">
+                <%= link_to "Eliminar", usuario, method: :delete %>
+              </button>
+            </td>
+          </tr>
+
+          </tbody>
+        <% end %>
+      </table>
+    </div>
   </div>
-
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th class="text-center">Nombre</th>
-      <th class="text-center">Apellidos</th>
-      <th class="text-center">Pais</th>
-      <th class="text-center">Correo</th>
-      <th class="text-center" colspan="3">Acciones</th>
-    </tr>
-    </thead>
-
-    <% @usuario.each do |usuario| %>
-      <tbody>
-      <tr>
-        <td class="text-center align-middle"> <%= usuario.nombre %> </td>
-        <td class="text-center align-middle"> <%= usuario.apellidos %> </td>
-        <td class="text-center align-middle"> <%= usuario.pais %> </td>
-        <td class="text-center align-middle"> <%= usuario.email %> </td>
-        <td class="text-center align-middle"> <%= link_to "Detalles", usuario %> </td>
-        <td class="text-center align-middle"> <%= link_to "Editar", edit_usuario_path(usuario.id) %> </td>
-        <td class="text-center align-middle"> <%= link_to "Eliminar", usuario, method: :delete %> </td>
-      </tr>
-
-
-      </tbody>
-    <% end %>
-  </table>>
-
 </section>

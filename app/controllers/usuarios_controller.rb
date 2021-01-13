@@ -5,7 +5,7 @@ class UsuariosController < ApplicationController
   add_flash_types :notice
 
   def index
-    @usuario = Usuario.all()
+    @usuario = Usuario.all
   end
 
   def new
@@ -14,7 +14,12 @@ class UsuariosController < ApplicationController
 
   def create
     @usuario = Usuario.create(params_usuarios)
-    redirect_to root_path
+    if @usuario.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
+
     #render json: @usuario
   end
 
