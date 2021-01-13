@@ -6,17 +6,17 @@ class CategoriasControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get leer" do
+  test "should get show" do
     get categorias_leer_url
     assert_response :success
   end
 
-  test "should get crear" do
+  test "should get create" do
     get categorias_crear_url
     assert_response :success
   end
 
-  test "should get actualizar" do
+  test "should get update" do
     get categorias_actualizar_url
     assert_response :success
   end

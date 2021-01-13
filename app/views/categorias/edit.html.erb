@@ -1,0 +1,34 @@
+<div class="container">
+
+  <h1>Editar categoría</h1>
+
+  <%= form_with(model: @categoria, local: true) do |form| %>
+    <!-- Protección CSRF-->
+    <%#= token_tag nil %>
+
+    <div class="form-group">
+      <%= form.label :id %>
+      <%= form.text_field :id, class: 'form-control', readonly: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :nombre %>
+      <%= form.text_field :nombre, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :descripcion %>
+      <%= form.text_area :descripcion, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <label for="imagen">Imagen</label>
+      <input type="file" class="form-control-file" id="imagen">
+    </div>
+
+    <%= form.submit "Guardar", class: 'btn btn-primary' %>
+
+    <%= link_to 'Cancelar', :back, class: "btn btn-warning" %>
+  <% end %>
+
+</div>

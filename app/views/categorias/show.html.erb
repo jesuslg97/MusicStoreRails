@@ -17,11 +17,13 @@
         <td><%= @categoria.descripcion %></td>
         <td><%= @categoria.img %></td>
         <td class="text-center">
-          <a class="btn btn-primary btn-sm" href="/categorias/actualizar/<%= @categoria.id %>">Editar</a>
-          <button type="button" class="btn btn-sm btn-danger">Eliminar</button>
+          <%= link_to 'Editar', edit_categorium_path(@categoria), class: "btn btn-primary btn-sm" %>
+          <%= link_to 'Eliminar', @categoria, method: :delete, data: { confirm: "¿Está seguro?" }, class: "btn btn-danger btn-sm" %>
         </td>
       </tr>
     </tbody>
   </table>
+
+  <%= link_to 'Cancelar', :back, class: "btn btn-warning" %>
 
 </div>
