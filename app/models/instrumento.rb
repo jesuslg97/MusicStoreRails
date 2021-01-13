@@ -8,4 +8,5 @@ class Instrumento < ApplicationRecord
   validates :color, presence: true
   validates :material, presence: true, length: {minimum: 1}
   validates :image, presence: true
+  validates :informacion, presence: true
 end

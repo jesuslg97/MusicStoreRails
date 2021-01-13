@@ -52,7 +52,7 @@ class InstrumentosController < ApplicationController
 
     def strong_params_instrumento
       params.require(:instrumento).permit(:nombre, :tipo, :detalles, :precio,
-                                          :image, :idCategoria, :color, :material)
+                                          :image, :idCategoria, :color, :material, :informacion)
     end
 
 end
