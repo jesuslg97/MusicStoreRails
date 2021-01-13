@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #resources :instrumentos
 
   get "productos", to: "instrumentos#show_json"
+  get "informacion", to: "instrumentos#show_json"
 
   get "instrumentos", to: "instrumentos#index"
   get "instrumentos/new", to: "instrumentos#new", as: :new_instrumento
