@@ -46,6 +46,11 @@ class UsuariosController < ApplicationController
     redirect_to root_path
   end
 
+  def json
+    @usuario = Usuario.all
+    render json: @usuario
+  end
+
   private
     def params_usuarios
       params.require(:usuario).permit(:nombre, :apellidos, :pais, :localidad,
