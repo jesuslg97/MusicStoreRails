@@ -19,8 +19,6 @@ class UsuariosController < ApplicationController
     else
       render 'new'
     end
-
-    #render json: @usuario
   end
 
   def show
