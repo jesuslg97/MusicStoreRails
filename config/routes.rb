@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'usuarios/:id/edit', to: "usuarios#edit", as: :edit_usuario
   patch "usuarios/:id", to: "usuarios#update", as: :usuario
   delete "usuarios/:id", to: "usuarios#delete"
+  get "login", to: "usuarios#login"
+  post "login", to: "usuarios#logged"
+
   get "users", to: "usuarios#json"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

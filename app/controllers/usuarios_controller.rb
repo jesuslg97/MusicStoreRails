@@ -49,6 +49,17 @@ class UsuariosController < ApplicationController
     render json: @usuario
   end
 
+  def login
+
+  end
+
+  def logged
+    @usuario = Usuario.find_by_nombre(params[:usuario][:nombre])
+    if @usuaurio.contraseña == params[:user][:password]
+      redirect_to root_path
+    end
+  end
+
   private
     def params_usuarios
       params.require(:usuario).permit(:nombre, :apellidos, :pais, :localidad,
