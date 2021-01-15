@@ -9,21 +9,17 @@
         </div>
 
         <div class="col-12">
-          <%= form_with(model: @usuario, local: true) do |form| %>
-            <!-- Box email -->
+          <%= form_for :user, url: usuarios_logged_path do |form| %>
+
             <div class="form-group">
               <%= form.label :nombre %>
               <%= form.text_field :nombre %>
             </div>
-            <input type="text" id="nombre1">
-            <!-- Box email -->
 
-            <!-- Box password -->
             <div class="form-group">
               <%= form.label :contraseña %>
-              <%= form.text_field :contraseña %>
+              <%= form.password_field :contraseña %>
             </div>
-            <!-- Box password -->
 
             <div class="d-flex justify-content-center mb-2">
               <%= form.submit class: "btn btn-dark" %>

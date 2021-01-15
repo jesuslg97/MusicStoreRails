@@ -54,9 +54,12 @@ class UsuariosController < ApplicationController
   end
 
   def logged
-    @usuario = Usuario.find_by_nombre(params[:usuario][:nombre])
-    if @usuaurio.contraseña == params[:user][:password]
+    user = Usuario.find_by_nombre(params[:user][:nombre])
+    if user.contraseña == params[:user][:contraseña]
+      session[:nombre] = user.nombre
       redirect_to root_path
+    else
+      redirect_to usuarios_login_path
     end
   end
 

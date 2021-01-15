@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   get 'usuarios/index', to: 'usuarios#index'
   get 'usuarios/new', to: 'usuarios#new', as: :new_usuario
   post "usuarios", to: "usuarios#create"
-  get 'usuarios/:id', to: "usuarios#show"
   get 'usuarios/:id/edit', to: "usuarios#edit", as: :edit_usuario
   patch "usuarios/:id", to: "usuarios#update", as: :usuario
   delete "usuarios/:id", to: "usuarios#delete"
-  get "login", to: "usuarios#login"
-  post "login", to: "usuarios#logged"
+  get "usuarios/login", to: "usuarios#login"
+  post 'usuarios/logged', to: 'usuarios#logged'
+
+  get 'usuarios/:id', to: "usuarios#show"
 
   get "users", to: "usuarios#json"
 
