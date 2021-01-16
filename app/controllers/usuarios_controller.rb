@@ -54,20 +54,26 @@ class UsuariosController < ApplicationController
   end
 
   def logged
-    user = Usuario.find_by_nombre(params[:user][:nombre])
-    if user.contraseña == params[:user][:contraseña]
-      session[:nombre] = user.nombre
-      redirect_to root_path
+    usuario = Usuario.find_by_nombre(params[:usuario][:nombre])
+    if usuario != nil
+      if usuario.contraseña == params[:usuario][:contraseña] && usuario.tipo == "1"
+        session[:nombre] = usuario.nombre
+        redirect_to root_path
+      elsif usuario.contraseña == params[:usuario][:contraseña] && usuario.tipo == "2"
+        redirect_to usuarios_login_path, :notice => "Este usuario no es administrador"
+      else
+        redirect_to usuarios_login_path, :notice => "Contraseña incorrecta"
+      end
     else
-      redirect_to usuarios_login_path
+      redirect_to usuarios_login_path, :notice => "No existe el usuario"
     end
   end
 
   private
-    def params_usuarios
-      params.require(:usuario).permit(:nombre, :apellidos, :pais, :localidad,
-                                      :direccion, :codigoPostal, :email, :contraseña)
-    end
 
+  def params_usuarios
+    params.require(:usuario).permit(:nombre, :apellidos, :pais, :localidad,
+                                    :direccion, :codigoPostal, :email, :contraseña, :tipo)
+  end
 
 end
