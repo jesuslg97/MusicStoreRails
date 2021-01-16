@@ -58,7 +58,7 @@ class UsuariosController < ApplicationController
     if usuario != nil
       if usuario.contraseña == params[:usuario][:contraseña] && usuario.tipo == "1"
         session[:nombre] = usuario.nombre
-        redirect_to root_path
+        redirect_to usuarios_index_path
       elsif usuario.contraseña == params[:usuario][:contraseña] && usuario.tipo == "2"
         redirect_to usuarios_login_path, :notice => "Este usuario no es administrador"
       else
