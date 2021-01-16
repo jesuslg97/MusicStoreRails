@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: "usuarios#login"
+
   get 'categorias_api/index'
   get 'categorias_api/obtener/:id', to: 'categorias_api#obtener'
 
@@ -14,8 +17,6 @@ Rails.application.routes.draw do
 
   delete 'categorias/:id', to: 'categorias#destroy', as: :destroy_categorium
 
-  root to: "usuarios#index"
-
   get 'usuarios/index', to: 'usuarios#index'
   get 'usuarios/new', to: 'usuarios#new', as: :new_usuario
   post "usuarios", to: "usuarios#create"
@@ -30,4 +31,18 @@ Rails.application.routes.draw do
   get "users", to: "usuarios#json"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  #resources :instrumentos
+
+  get "productos", to: "instrumentos#show_json"
+  get "informacion", to: "instrumentos#show_json"
+
+  get "instrumentos", to: "instrumentos#index"
+  get "instrumentos/new", to: "instrumentos#new", as: :new_instrumento
+  post "instrumentos", to: "instrumentos#create"
+  get "instrumentos/:id", to: "instrumentos#show"
+  get "instrumentos/:id/edit", to: "instrumentos#edit", as: :edit_instrumento
+  patch "instrumentos/:id", to: "instrumentos#update", as: :instrumento
+  delete "instrumentos/:id", to: "instrumentos#destroy"
+
 end
