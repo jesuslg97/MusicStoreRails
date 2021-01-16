@@ -1,0 +1,64 @@
+<section class="offset-md-1 col-md-10 col-xs-12">
+  <div class="d-flex justify-content-center mt-5 content">
+    <div class="col-sm-12 py-4">
+      <div class="w-100 text-center">
+        <h1>Detalles instrumento</h1>
+        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto border-dark" style="width: 200px;">
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 mb-3 text-center">
+          <%= image_tag(@instrumento.image, class: "rounded", style: "width: 200px") %>
+        </div>
+
+        <div class="col-md-5">
+          <h4> <%= @instrumento.nombre %> </h4>
+          <ul>
+            <li class="col1"> <%= @instrumento.detalles %> </li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 mt-5">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Color</th>
+                <td> <%= @instrumento.color %> </td>
+              </tr>
+              <tr>
+                <th>Material</th>
+                <td> <%= @instrumento.material %> </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="col-md-8 text-center mt-3 pt-3">
+            <!-- Icono Volver -->
+            <td class="text-center align-middle">
+              <button class="btn btn-dark ml-4">
+                <%= link_to "Volver", instrumentos_path, style: "color:#ffffff" %>
+              </button>
+            </td>
+            <!-- /Icono Volver -->
+
+            <!-- Icono Editar -->
+            <td class="text-center align-middle">
+              <button class="btn btn-success">
+                <%= link_to "Editar", edit_instrumento_path(@instrumento.id), style: "color:#ffffff" %>
+              </button>
+            </td>
+            <!-- /Icono Editar -->
+          </div>
+
+        </div>
+
+        <div class="col-md-4 text-center mt-3">
+          <div class="alert alert-dark p-2 my-auto">
+            <h5 class="my-auto"> <%= @instrumento.precio %> </h5>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

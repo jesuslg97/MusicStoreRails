@@ -1,0 +1,100 @@
+<%= form_with(model: @instrumento, local: true) do |form| %>
+
+  <div class="row">
+
+    <% if @instrumento.errors.any? %>
+      <div id="error_explanation" class="error">
+        <span>
+          Se han encontrado
+          <%= pluralize(@instrumento.errors.count, "error") %>:
+        </span>
+        <ul>
+          <% @instrumento.errors.full_messages.each do |msg| %>
+            <li> <%= msg %> </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- Bloque izquierda -->
+    <div class="col-md-6 col-xs-12">
+
+      <!-- Box name -->
+      <div class="form-group">
+        <%= form.label :nombre %>
+        <%= form.text_field :nombre, class:"form-control" %>
+      </div>
+      <!-- Box name -->
+
+      <!-- Box tipo -->
+      <div class="form-group">
+        <%= form.label :tipo %>
+        <%= form.text_field :tipo, class:"form-control" %>
+      </div>
+      <!-- Box tipo -->
+
+      <!-- Box idCategoria -->
+      <div class="form-group">
+        <%= form.label :idCategoria %>
+        <%= form.text_field :idCategoria, class:"form-control",
+                            placeholder: "G=1 B=2 Per=3 O=4 T=5 P=6 I=7 Pro=8 C=9 M=10" %>
+      </div>
+      <!-- Box idCategoria -->
+
+      <!-- Box Color -->
+      <div class="form-group">
+        <%= form.label :color %>
+        <%= form.color_field :color, class:"form-control" %>
+      </div>
+      <!-- Box Color -->
+
+      <!-- Box Informacion -->
+      <div class="form-group">
+        <%= form.label :informacion %>
+        <%= form.text_field :informacion, class:"form-control" %>
+      </div>
+      <!-- Box Informacion -->
+
+    </div>
+    <!-- Bloque izquierda -->
+
+    <!-- Bloque derecha -->
+    <div class="col-md-6 col-xs-12">
+
+      <!-- Box precio -->
+      <div class="form-group">
+        <%= form.label :precio %>
+        <%= form.text_field :precio, class:"form-control" %>
+      </div>
+      <!-- Box precio -->
+
+      <!-- Box detalles -->
+      <div class="form-group">
+        <%= form.label :detalles %>
+        <%= form.text_field :detalles, class:"form-control" %>
+      </div>
+      <!-- Box detalles -->
+
+      <!-- Box Imagen -->
+      <div class="form-group">
+        <%= form.label :image %>
+        <%= form.file_field :image, class:"form-control" %>
+      </div>
+      <!-- Box Imagen -->
+
+      <!-- Box Material -->
+      <div class="form-group">
+        <%= form.label :material %>
+        <%= form.text_field :material, class:"form-control" %>
+      </div>
+      <!-- Box Material -->
+
+    </div>
+    <!-- Bloque Derecha -->
+
+  </div>
+  <div class="d-flex justify-content-center mb-2 mt-4">
+    <%= form.submit class: "btn btn-dark" %>
+    <%= link_to 'Cancelar', instrumentos_path, class: "btn btn-primary ml-2" %>
+  </div>
+<% end %>
