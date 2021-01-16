@@ -1,49 +1,52 @@
-<div class="container">
+<section class="offset-md-1 col-md-10 col-xs-12">
+  <div class="my-3 content p-5">
 
-  <h1>Editar categoría</h1>
+    <div class="w-100 text-center">
+      <h1>Editar categoría</h1>
+      <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto border-dark" style="width: 200px;">
+    </div>
 
-  <div class="d-flex my-3">
-    <%= link_to 'Ver Categorías', categorias_path, class: "btn btn-secondary" %>
-  </div>
+    <%= form_with(model: @categoria, local: true) do |form| %>
 
-  <%= form_with(model: @categoria, local: true) do |form| %>
+      <% if @categoria.errors.any? %>
+        <div class="alert alert-danger">
+          <span>
+            Se han encontrado
+            <%= pluralize(@categoria.errors.count, "error") %>:
+          </span>
+          <ul>
+            <% @categoria.errors.full_messages.each do |msg| %>
+              <li> <%= msg %> </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-    <% if @categoria.errors.any? %>
-      <div class="alert alert-danger">
-        <span>
-          Se han encontrado
-          <%= pluralize(@categoria.errors.count, "error") %>:
-        </span>
-        <ul>
-          <% @categoria.errors.full_messages.each do |msg| %>
-            <li> <%= msg %> </li>
-          <% end %>
-        </ul>
+      <div class="form-group">
+        <%= form.label :id %>
+        <%= form.text_field :id, class: 'form-control', readonly: true %>
       </div>
-    <% end %>
 
-    <div class="form-group">
-      <%= form.label :id %>
-      <%= form.text_field :id, class: 'form-control', readonly: true %>
-    </div>
+      <div class="form-group">
+        <%= form.label :nombre %>
+        <%= form.text_field :nombre, class: 'form-control' %>
+      </div>
 
-    <div class="form-group">
-      <%= form.label :nombre %>
-      <%= form.text_field :nombre, class: 'form-control' %>
-    </div>
+      <div class="form-group">
+        <%= form.label :descripcion %>
+        <%= form.text_area :descripcion, class: 'form-control' %>
+      </div>
 
-    <div class="form-group">
-      <%= form.label :descripcion %>
-      <%= form.text_area :descripcion, class: 'form-control' %>
-    </div>
+      <%= image_tag @categoria.image, style: "max-width:250px", class: "rounded"%>
 
-    <div class="form-group">
-      <label for="imagen">Imagen</label>
-      <input type="file" class="form-control-file" id="imagen">
-    </div>
+      <div class="form-group">
+        <%= form.label :image %>
+        <%= form.file_field :image, class:"form-control-file" %>
+      </div>
 
-    <%= form.submit "Guardar", class: 'btn btn-primary' %>
+      <%= form.submit "Guardar", class: 'btn btn-primary' %>
+      <%= link_to "Volver", categorias_path, class: 'btn btn-secondary' %>
 
   <% end %>
-
-</div>
+  </div>
+</section>

@@ -1,42 +1,45 @@
-<div class="container">
-  <h1>Crear categoría</h1>
+<section class="offset-md-1 col-md-10 col-xs-12">
+  <div class="my-3 content p-5">
 
-  <div class="d-flex my-3">
-    <%= link_to 'Ver Categorías', categorias_path, class: "btn btn-secondary" %>
-  </div>
+    <div class="w-100 text-center">
+      <h1>Nueva categoría</h1>
+      <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto border-dark" style="width: 200px;">
+    </div>
 
-  <%= form_with(model: @categoria, url: categorias_path, html: { method: :post}, local: true) do |form| %>
+    <%= form_with(model: @categoria, url: categorias_path, html: { method: :post}, local: true) do |form| %>
 
-    <% if @categoria.errors.any? %>
-      <div class="alert alert-danger">
-        <span>
-          Se han encontrado
-          <%= pluralize(@categoria.errors.count, "error") %>:
-        </span>
-        <ul>
-          <% @categoria.errors.full_messages.each do |msg| %>
-            <li> <%= msg %> </li>
-          <% end %>
-        </ul>
+      <% if @categoria.errors.any? %>
+        <div class="alert alert-danger">
+          <span>
+            Se han encontrado
+            <%= pluralize(@categoria.errors.count, "error") %>:
+          </span>
+          <ul>
+            <% @categoria.errors.full_messages.each do |msg| %>
+              <li> <%= msg %> </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= form.label :nombre %>
+        <%= form.text_field :nombre, class: 'form-control' %>
       </div>
+
+      <div class="form-group">
+        <%= form.label :descripcion %>
+        <%= form.text_area :descripcion, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :image %>
+        <%= form.file_field :image, class:"form-control-file" %>
+      </div>
+
+      <%= form.submit "Guardar", class: 'btn btn-primary' %>
+      <%= link_to "Volver", categorias_path, class: 'btn btn-secondary' %>
+
     <% end %>
-
-    <div class="form-group">
-      <%= form.label :nombre %>
-      <%= form.text_field :nombre, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :descripcion %>
-      <%= form.text_area :descripcion, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <label for="imagen">Imagen</label>
-      <input type="file" class="form-control-file" id="imagen">
-    </div>
-
-    <%= form.submit "Guardar", class: 'btn btn-primary' %>
-
-  <% end %>
-</div>
+  </div>
+</section>

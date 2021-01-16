@@ -22,7 +22,7 @@ class InstrumentosController < ApplicationController
   def show
   end
 
-  def show_json
+    def show_json
     @instrumento = Instrumento.all.with_attached_image
     render json: @instrumento.map { |instrumento|
       instrumento.as_json.merge({ image: url_for(instrumento.image) })
