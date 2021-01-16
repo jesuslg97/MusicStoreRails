@@ -8,6 +8,7 @@ class InstrumentosController < ApplicationController
 
   def new
     @instrumento = Instrumento.new
+    @categorias = Categorium.all
   end
 
   def create
@@ -30,6 +31,7 @@ class InstrumentosController < ApplicationController
   end
 
   def edit
+    @categorias = Categorium.all()
   end
 
   def update
@@ -52,7 +54,7 @@ class InstrumentosController < ApplicationController
 
     def strong_params_instrumento
       params.require(:instrumento).permit(:nombre, :tipo, :detalles, :precio,
-                                          :image, :idCategoria, :color, :material, :informacion)
+                                          :image, :categoria_id, :color, :material, :informacion)
     end
 
 end

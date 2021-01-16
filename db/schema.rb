@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_16_160002) do
+ActiveRecord::Schema.define(version: 2021_01_16_185259) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2021_01_16_160002) do
   end
 
   create_table "instrumentos", force: :cascade do |t|
-    t.integer "idCategoria"
     t.string "tipo"
     t.string "nombre"
     t.string "detalles"
@@ -60,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_01_16_160002) do
     t.string "color"
     t.string "material"
     t.string "informacion"
+    t.integer "categoria_id"
+    t.index ["categoria_id"], name: "index_instrumentos_on_categoria_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -78,4 +79,5 @@ ActiveRecord::Schema.define(version: 2021_01_16_160002) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "instrumentos", "categoria", column: "categoria_id"
 end
