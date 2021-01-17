@@ -26,13 +26,6 @@
       </div>
       <!-- Box name -->
 
-      <!-- Box tipo -->
-<!--      <div class="form-group">-->
-        <%#= form.label :tipo %>
-        <%#= form.text_field :tipo, class:"form-control" %>
-<!--      </div>-->
-      <!-- Box tipo -->
-
       <!-- Box idCategoria -->
       <div class="form-group">
         <label for="categoria_id">Categoria</label>
@@ -98,7 +91,7 @@
 
   </div>
   <div class="d-flex justify-content-center mb-2 mt-4">
-    <%= form.submit class: "btn btn-dark" %>
+    <%= form.submit "Guardar", class: "btn btn-dark" %>
     <%= link_to 'Cancelar', instrumentos_path, class: "btn btn-primary ml-2" %>
   </div>
 <% end %>

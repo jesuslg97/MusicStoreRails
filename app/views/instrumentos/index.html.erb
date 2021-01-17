@@ -2,7 +2,7 @@
   <div class="my-3 content py-3 ">
 
     <div class="w-100 text-center">
-      <h1>Mis instrumentos</h1>
+      <h1>Instrumentos</h1>
       <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto border-dark" style="width: 200px;">
     </div>
 
@@ -31,26 +31,20 @@
 
               <!-- Icono Detalles -->
               <td class="text-center align-middle">
-                <button class="btn btn-info">
-                  <%= link_to "Detalles", instrumento, style: "color:#ffffff" %>
-                </button>
+                <%= link_to "Detalles", instrumento, class: "btn btn-info" %>
               </td>
               <!-- /Icono Detalles -->
 
               <!-- Icono Editar -->
               <td class="text-center align-middle">
-                <button class="btn btn-success">
-                  <%= link_to "Editar", edit_instrumento_path(instrumento.id), style: "color:#ffffff" %>
-                </button>
+                <%= link_to "Editar", edit_instrumento_path(instrumento.id), class: "btn btn-success" %>
               </td>
               <!-- /Icono Editar -->
 
               <!-- Icono Eliminar -->
               <td class="text-center align-middle">
-                <button class="btn btn-danger">
-                  <%= link_to "Eliminar", instrumento, method: :delete,
-                              data: {confirm: '¿Está seguro de querer eliminar?'}, style: "color:#ffffff" %>
-                </button>
+                <%= link_to "Eliminar", instrumento, method: :delete, class: "btn btn-danger",
+                              data: {confirm: '¿Está seguro de querer eliminar?'} %>
               </td>
               <!-- /Icono Eliminar -->
 
