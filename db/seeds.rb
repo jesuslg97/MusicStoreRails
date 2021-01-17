@@ -108,3 +108,20 @@ instrumento19.save
 instrumento20.save
 
 # END SEED INSTRUMENTOS
+
+# SEED USUARIOS
+
+Usuario.create(:nombre => 'Alvaro', :apellidos => 'Santana Naranjo', :pais => 'España', :localidad => 'Santa Brígida',
+               :direccion => 'c/Santa Brígida nº 1', :codigoPostal => '35300', :email => 'alvaro@ulpgc.es',
+               :contraseña => 'contraseña', :tipo => '1')
+Usuario.create(:nombre => 'Jesus', :apellidos => 'López González', :pais => 'España', :localidad => 'Lanzarote',
+               :direccion => 'c/Lanzarote nº 1', :codigoPostal => '35540', :email => 'jesus@ulpgc.es',
+               :contraseña => 'contraseña', :tipo => '1')
+Usuario.create(:nombre => 'Sara', :apellidos => 'Lis Almonacid Uribe', :pais => 'España', :localidad => 'Valsequillo',
+               :direccion => 'c/Valsequillo nº 1', :codigoPostal => '35217', :email => 'sara@ulpgc.es',
+               :contraseña => 'contraseña', :tipo => '1')
+Usuario.create(:nombre => 'Usuario', :apellidos => 'No Administrador', :pais => 'España', :localidad => 'Tafira',
+               :direccion => 'c/Tafira nº 1', :codigoPostal => '35200', :email => 'usuario@ulpgc.es',
+               :contraseña => 'contraseña', :tipo => '2')
+
+# END SEED USUARIOS

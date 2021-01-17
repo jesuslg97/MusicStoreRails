@@ -31,7 +31,7 @@
         <label for="categoria_id">Categoria</label>
         <select name="instrumento[categoria_id]" class="form-control">
           <option value="null">Seleccione categoría</option>
-          <% @categorias.each do |c| %>
+          <% Categorium.all.each do |c| %>
             <option value="<%= c.id %>" <%= @instrumento.categoria_id == c.id ? "selected" : "" %>><%= c.nombre %></option>
           <% end %>
         </select>

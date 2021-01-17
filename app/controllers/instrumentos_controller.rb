@@ -8,7 +8,6 @@ class InstrumentosController < ApplicationController
 
   def new
     @instrumento = Instrumento.new
-    @categorias = Categorium.all
   end
 
   def create
@@ -31,7 +30,6 @@ class InstrumentosController < ApplicationController
   end
 
   def edit
-    @categorias = Categorium.all
   end
 
   def update
@@ -44,7 +42,7 @@ class InstrumentosController < ApplicationController
 
   def destroy
     @instrumento.destroy
-    redirect_to root_path
+    redirect_to instrumentos_path
   end
 
   private
