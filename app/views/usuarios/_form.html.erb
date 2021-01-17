@@ -1,6 +1,6 @@
 <%= form_with(model: @usuario, local: true) do |form| %>
   <% if @usuario.errors.any? %>
-      <div id="error_explanation">
+      <div class="alert-danger">
         <span>
           Se han escontrado
           <%= pluralize(@usuario.errors.count, "error") %>:

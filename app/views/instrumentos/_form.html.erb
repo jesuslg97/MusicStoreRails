@@ -3,7 +3,7 @@
   <div class="row">
 
     <% if @instrumento.errors.any? %>
-      <div id="error_explanation" class="error">
+      <div class="alert-danger">
         <span>
           Se han encontrado
           <%= pluralize(@instrumento.errors.count, "error") %>:
