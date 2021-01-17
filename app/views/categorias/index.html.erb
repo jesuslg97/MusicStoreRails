@@ -6,15 +6,11 @@
       <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto border-dark" style="width: 200px;">
     </div>
 
-    <div class="d-flex my-3">
-      <%= link_to 'Crear categoría', categorias_new_path, class: "btn btn-primary" %>
-    </div>
-
     <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Nombre</th>
+          <th scope="col" class="text-center">Nombre</th>
           <th scope="col" class="text-center">Acciones</th>
         </tr>
       </thead>
@@ -22,11 +18,11 @@
         <% @categorias.each do |categoria| %>
           <tr>
             <th scope="row"><%= categoria.id %></th>
-            <td><%= categoria.nombre %></td>
+            <td class="text-center"><%= categoria.nombre %></td>
             <td class="align-middle text-center">
-              <%= link_to 'Detalles', categoria, class: "btn btn-secondary btn-sm" %>
-              <%= link_to 'Editar', edit_categorium_path(categoria), class: "btn btn-primary btn-sm" %>
-              <%= link_to 'Eliminar', categoria, method: :delete, data: { confirm: "¿Está seguro?" }, class: "btn btn-danger btn-sm" %>
+              <%= link_to 'Detalles', categoria, class: "btn btn-info" %>
+              <%= link_to 'Editar', edit_categorium_path(categoria), class: "btn btn-success" %>
+              <%= link_to 'Eliminar', categoria, method: :delete, data: { confirm: "¿Está seguro?" }, class: "btn btn-danger" %>
             </td>
           </tr>
         <% end %>

@@ -35,17 +35,13 @@
           <div class="col-md-8 text-center mt-3 pt-3">
             <!-- Icono Volver -->
             <td class="text-center align-middle">
-              <button class="btn btn-dark ml-4">
-                <%= link_to "Volver", instrumentos_path, style: "color:#ffffff" %>
-              </button>
+              <%= link_to "Volver", instrumentos_path, class: "btn btn-dark ml-4" %>
             </td>
             <!-- /Icono Volver -->
 
             <!-- Icono Editar -->
             <td class="text-center align-middle">
-              <button class="btn btn-success">
-                <%= link_to "Editar", edit_instrumento_path(@instrumento.id), style: "color:#ffffff" %>
-              </button>
+              <%= link_to "Editar", edit_instrumento_path(@instrumento.id), class: "btn btn-success" %>
             </td>
             <!-- /Icono Editar -->
           </div>
