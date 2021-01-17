@@ -15,7 +15,7 @@ class UsuariosController < ApplicationController
   def create
     @usuario = Usuario.create(params_usuarios)
     if @usuario.save
-      redirect_to root_path
+      redirect_to usuarios_index_path
     else
       render 'new'
     end
@@ -32,7 +32,7 @@ class UsuariosController < ApplicationController
   def update
     @usuario = Usuario.find(params[:id])
     if @usuario.update(params_usuarios)
-      redirect_to root_path
+      redirect_to usuarios_index_path
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class UsuariosController < ApplicationController
   def delete
     @usuario = Usuario.find(params[:id])
     @usuario.destroy
-    redirect_to root_path
+    redirect_to usuarios_index_path
   end
 
   def json
