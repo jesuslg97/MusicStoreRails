@@ -121,6 +121,7 @@ GEM
     nokogiri (1.10.10-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.2.3-x64-mingw32)
     popper_js (1.16.0)
     public_suffix (4.0.6)
     puma (5.1.1)
@@ -187,7 +188,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.0.1)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -231,6 +231,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.7)
   jquery-rails (~> 4.3.5)
+  pg
   popper_js (~> 1.16)
   puma (~> 5.0)
   rack-cors
@@ -238,7 +239,6 @@ DEPENDENCIES
   rails (~> 6.1.0)
   sass-rails (>= 6)
   selenium-webdriver
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
