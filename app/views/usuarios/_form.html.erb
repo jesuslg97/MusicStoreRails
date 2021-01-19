@@ -1,4 +1,4 @@
-<%= form_with(model: @usuario, local: true) do |form| %>
+<%= form_with(model: @usuario, url: usuarios_path, html: { method: :post} ,local: true) do |form| %>
   <% if @usuario.errors.any? %>
       <div class="alert-danger">
         <span>
